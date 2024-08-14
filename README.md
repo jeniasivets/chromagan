@@ -36,16 +36,13 @@ The discriminator receives an image of size HxWx3 in the CIE Lab color space and
 
 ![Model Architecture](images/model.png)
 
-The generator takes a black and white image of size 3xL as input. The initial layers replicate the VGG-16 architecture (depicted as yellow blocks), consisting of a sequence of convolutions followed by ReLU activations. After these layers, the outputs split into two streams:
+The generator takes a black and white image of size 3xL as input. The initial layers replicate the VGG-16 architecture (depicted as yellow blocks), consisting of a sequence of convolutions followed by ReLU activations. After these layers, the outputs split into several block groups:
 
-- **Purple Stream**: Follows a Conv-BatchNorm-ReLU pattern.
-- **Red Stream**: Contains Conv-BatchNorm-ReLU blocks; the gray section returns the class distribution for ImageNet, while the red section is reshaped to match the purple block size and concatenated with the generator's main flow.
+- **Purple Blocks**: Follows a Conv-BatchNorm-ReLU pattern.
+- **Red Blocks**: Contains Conv-BatchNorm-ReLU blocks; the gray section returns the class distribution for ImageNet, while the red section is reshaped to match the purple block size and concatenated with the generator's main flow.
 
 This is followed by upsampling blocks, resulting in two output color channels (a, b). The discriminator, represented by the green part of the diagram, is based on the PatchGAN architecture using 4x4 convolutions, BatchNorm, and LeakyReLU activations.
 
-[//]: # (The generator takes a 3xL dimension black and white image as input. The initial layers of the generator replicate the VGG-16 architecture &#40;depicted as yellow blocks&#41;, which consists of a sequence of convolutions followed by ReLU activations. After the yellow blocks, the outputs of the generator split into two streams. The purple stream follows a Conv-BatchNorm-ReLU pattern, while the red stream contains Conv-BatchNorm-ReLU blocks that are divided: the gray section returns the class distribution for ImageNet, while the red section, composed of a sequence of linear layers, is reshaped to match the size of the purple block and concatenated with the main flow of the generator. This is followed by upsampling blocks, resulting in two color channels &#40;a, b&#41; at the generator's output.)
-
-[//]: # (The green part of the architecture diagram represents the discriminator, which is based on the PatchGAN architecture using 4x4 convolutions, BatchNorm, and LeakyReLU activations.)
 
 ### Loss Functions
 
