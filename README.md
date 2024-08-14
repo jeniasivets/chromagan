@@ -1,8 +1,6 @@
 ## ChromaGAN Project
 
-This project is based on the paper [ChromaGAN: A Conditional Generative Adversarial Network for Colorization](https://arxiv.org/pdf/1907.09837.pdf).
-
-The project implements a model for colorizing black and white images. 
+This project is based on the paper [ChromaGAN: A Conditional Generative Adversarial Network for Colorization](https://arxiv.org/pdf/1907.09837.pdf) and implements a model for colorizing black and white images. 
 
 ### Objective
 
