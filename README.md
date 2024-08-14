@@ -12,11 +12,11 @@ The goal is to restore the two chrominance channels (a and b) of an image in the
 
 Colorizing a photograph without ground truth data
 <p float="left">
-  <img src="images/0.png" width=35%>
-  <img src="images/1.png" width=35%>
+  <img src="images/0.png" width=20%>
+  <img src="images/1.png" width=20%>
 </p>
 Colorizing test images from TinyImageNet
-<img src="images/grid.png" width=75%>
+<img src="images/grid.png" width=45%>
 
 ### Code
 Training and inference scripts, along with helper functions, are available in the notebook and the `./scripts` directory.
@@ -32,7 +32,6 @@ The discriminator receives an image of size HxWx3 in the CIE Lab color space and
 
 **Detailed Architecture Overview**
 
-[//]: # (Let’s take a look at the architecture diagram:)
 
 ![Model Architecture](images/model.png)
 
