@@ -16,7 +16,7 @@ Colorizing a photograph without ground truth data
 Colorizing test images from TinyImageNet
 <img src="images/grid.png" width=45%>
 
-### Code
+### Implementation
 Training and inference scripts, along with helper functions, are available in the notebook and the `./scripts` directory.
 
 ### Network Architecture
